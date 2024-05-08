@@ -1,0 +1,19 @@
+version: '3'
+services: 
+  mongodb:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+      - "3500:3500"
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "3000:3000"
